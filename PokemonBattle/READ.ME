@@ -1,0 +1,118 @@
+#Pokémon Battle System
+
+#Integrantes del Proyecto
+- Nicolás López Chaves (Assured)
+
+#Descripción General
+Simulador de combates Pokémon desarrollado en C++ con interfaz gráfica utilizando SFML. El proyecto implementa un sistema completo de selección de equipos y combates por turnos basado en la primera generación de Pokémon.
+
+#Requisitos Mínimos Cumplidos ✅
+
+#✅ Lenguaje de Programación
+- C++ como lenguaje principal
+- Uso de librerías modernas (SFML para gráficos)
+
+#✅ Sistema de Combate por Turnos
+- Combates alternados entre jugador y rival
+- Sistema de turnos automático*
+- Interfaz gráfica para selección de ataques
+
+#✅ Menú de Interacción
+- Menú gráfico de selección de Pokémon
+- Interfaz de combate interactiva
+- Sistema de navegación por mouse*
+
+#✅ Sistema de Ataques
+- Cada Pokémon tiene múltiples ataques únicos
+- Sistema de tipos y efectividad
+- Cálculo de daño basado en estadísticas*
+
+#✅ Sistema de Victoria
+- Detección automática de fin de combate
+- Anuncio del ganador
+- Manejo de Pokémon derrotados
+
+#Desarrollos Innovadores Implementados
+
+#🎮 Interfaz Gráfica Completa
+- Sistema de sprites animados: Animaciones de idle para todos los Pokémon
+- Interfaz visual moderna: Reemplazo completo del menú textual por interfaz gráfica
+- Sistema de cursor personalizado: Cursor temático que mejora la experiencia de usuario
+
+#📊 Sistema de Estadísticas Avanzado
+- Pokédex completa: Base de datos con los 151 Pokémon originales
+- Estadísticas fieles: HP, Ataque, Defensa, Velocidad basadas en los juegos originales*
+- Sistema de tipos completo: 15 tipos diferentes con tabla de efectividades
+
+#⚔️ Mecánicas de Combate Sofisticadas
+- Cálculo de daño realista: Fórmulas basadas en los juegos oficiales
+- Sistema de efectividad: Ataques súper efectivos, poco efectivos y sin efecto*
+- Múltiples ataques por Pokémon: Cada especie tiene su propio conjunto de movimientos
+
+#🎯 Sistema de Selección Inteligente
+- Validación de equipos: Prevención de Pokémon duplicados
+- Generación automática de rivales: Equipos rival con Pokémon legendarios balanceados
+- Interfaz: Sistema intuitivo de armado de equipos
+
+#🎨 Elementos Visuales Avanzados
+- Renderizado de texto personalizado: Sistema propio para mostrar nombres usando spritesheet
+- Escalado dinámico: Adaptación automática a diferentes resoluciones de pantalla
+- Animaciones fluidas: Transiciones suaves entre estados del juego
+
+#🔧 Arquitectura de Código Profesional
+- Separación de responsabilidades: Código modular y bien estructurado*
+- Manejo de recursos eficiente: Carga optimizada de texturas y sprites
+- Sistema de eventos robusto: Manejo completo de input de mouse y teclado
+
+#Características Técnicas
+
+#Tecnologías Utilizadas
+- C++17: Lenguaje principal
+- SFML 2.5.0: Librería gráfica y de ventanas
+- Sprites: Arte pixel basado en los juegos clásicos
+
+#Arquitectura del Proyecto
+
+📁 PokemonBattle/
+├──  PokemonBattle.cpp     # Punto de entrada
+├──  Pokedex.cpp           # Base de datos Pokemon
+├──  pokedex.h             # Funciones y estructuras
+├──  combate.cpp           # Sistema de combate
+├──  combate.h             #funcion para iniciar combate
+├──  PCMenu.cpp            # Selección de equipos
+├──  PCMenu.h              # funcion para mostrar el PCMenu
+├──  StartScreen.cpp       # mostrar la pantalla de inicio
+├──  StartScreen.hpp       #funcion para mostrar la pantalla de inicio
+└── 📁 resources/
+    └── 📁 sprites/          # Recursos gráficos
+
+
+#Rendimiento
+- Memoria eficiente: Carga inteligente de recursos
+- Compatibilidad: Funciona en Windows con diferentes resoluciones
+
+#Instrucciones de Uso
+
+#Requisitos del Sistema
+- Windows 10 o superior
+- Visual Studio 2019+ (para compilación)
+- SFML 2.5+ instalado
+
+#Controles
+- Clic Izquierdo: Seleccionar Pokémon / Elegir ataque
+- Clic Derecho: Remover Pokémon del equipo (click en el nombre)
+- ESC: Salir del juego
+
+#Flujo del Juego
+1. Selección de Equipo: Elige 6 Pokémon de los 151 disponibles
+2. Generación de Rival: El sistema crea automáticamente un equipo rival
+3. Combate: Enfrenta tus Pokémon contra el rival en turnos alternados
+4. Victoria: El primer entrenador en derrotar todos los Pokémon rivales gana
+
+#Conclusión
+
+Este proyecto excede significativamente los requisitos mínimos, transformando un simple sistema de combate textual en una experiencia gráfica completa que captura la esencia de los juegos Pokémon clásicos. La implementación demuestra dominio de programación en C++, manejo de librerías externas, y diseño de interfaces de usuario.
+
+#IMPORTANTE
+
+*Ayuda de IA
