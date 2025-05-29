@@ -1,0 +1,7 @@
+﻿  combate.cpp
+C:\Proyectos\PokemonBattle\combate.cpp(179,68): warning C4267: 'argumento': conversión de 'size_t' a '_Ty'; posible pérdida de datos
+C:\Proyectos\PokemonBattle\combate.cpp(179,68): warning C4267:         with
+C:\Proyectos\PokemonBattle\combate.cpp(179,68): warning C4267:         [
+C:\Proyectos\PokemonBattle\combate.cpp(179,68): warning C4267:             _Ty=int
+C:\Proyectos\PokemonBattle\combate.cpp(179,68): warning C4267:         ]
+  PokemonBattle.vcxproj -> C:\Proyectos\PokemonBattle\x64\Debug\PokemonBattle.exe

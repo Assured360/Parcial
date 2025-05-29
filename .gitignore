@@ -1,0 +1,10 @@
+.vs/ 
+*.vsidx 
+[Bb]in/ 
+[Oo]bj/ 
+*.user 
+*.suo 
+*.resharper 
+*.dbmdl 
+*.jfm 
+*.pfx 
