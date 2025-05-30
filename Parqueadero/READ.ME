@@ -1,89 +1,168 @@
-#Sistema de Gestión de Parqueaderos
+# 🅿️ Sistema de Gestión de Parqueaderos
 
-#Integrantes del proyecto
-- Nicolás Lopez
+## Descripción General
+Sistema básico de administración de parqueaderos desarrollado en Python que simula el funcionamiento de un parqueadero real, permitiendo la gestión eficiente de espacios, control de tiempo de permanencia y cálculo de tarifas.
 
-#Descripción General
-Este proyecto es un sistema básico de administración de parqueaderos desarrollado en Python. Su objetivo es simular el funcionamiento de un parqueadero real, permitiendo la gestión eficiente de la disponibilidad de espacios, el control del tiempo de permanencia de los vehículos y el cálculo del valor a pagar.
-Combina lógica de programación y gestión de datos, ofreciendo una aplicación escalable y aplicable en la vida real.
+## Requisitos Mínimos Cumplidos ✅
 
-#Requisitos Mínimos Cumplidos ✅
+- **✅ Lenguaje de Programación:** Python como lenguaje principal
+- **✅ Generación de Mapa:** Mapa visual 10×15 con símbolos distintivos
+- **✅ Vías, Entrada y Salida:** Sistema de navegación con entrada (E) y salida (S)
+- **✅ Registro de Vehículos:** Placa, hora de entrada y espacio asignado
+- **✅ Sistema de Cobro:** Cálculo automático basado en tiempo de permanencia
+- **✅ Sistema de Disponibilidad:** Visualización en tiempo real de espacios
 
-#✅ Lenguaje de Programación
--Python como lenguaje principal de desarrollo.
+---
 
-#✅ Generación de un Mapa del Parqueadero
--El sistema genera un mapa visual del parqueadero en consola con dimensiones de al menos 8×8 (actualmente 10×15).
--Representa claramente la distribución utilizando símbolos para espacios libres, ocupados, vías, entrada y salida.
+## Desarrollos Innovadores Implementados
 
-#✅ Vías, Entrada y Salida
--El mapa incluye vías de acceso y salida (), así como una entrada (E) y una salida (S).
--La ubicación de los parqueaderos (P) es accesible a través de las vías definidas, permitiendo un flujo lógico para los vehículos.
+### 🗺️ Visualización Mejorada del Mapa
 
-#✅ Registro de Vehículos
--Al ingresar un vehículo, se registran al menos:
-Placa del vehículo.
-Registro temporal de entrada (fecha y hora exacta).
-Espacio de parqueo asignado en el mapa.
+**¿Para qué se implementó?**
 
-#✅ Sistema de Cobro
--Implementado un sistema que calcula el valor a pagar según el tiempo de permanencia del vehículo.
--La tarifa es configurable por minuto.
+Se implementó para proporcionar una representación visual clara e intuitiva del estado actual del parqueadero en tiempo real. Esta funcionalidad permite a los usuarios identificar rápidamente espacios disponibles, ocupados, y la estructura general del parqueadero sin necesidad de navegar por menús adicionales.
 
-#✅ Sistema de Disponibilidad
--El sistema muestra en tiempo real la disponibilidad del parqueadero:
--Diferencia Espacios ocupados (X) y Espacios libres (P).
--Esta visualización se refleja gráficamente en el mapa y con un conteo explícito.
--Desarrollos Innovadores Implementados
+**¿Por qué se consideró necesario?**
 
-#🗺️ Visualización Mejorada del Mapa
--Símbolos claros: Utiliza caracteres distintivos (E, S, P, X, ) para una fácil comprensión del estado del parqueadero.
--Actualización en tiempo real: El mapa se actualiza y muestra automáticamente después de cada operación (ingreso o salida).
+Un sistema de parqueadero efectivo requiere información visual inmediata y comprensible. En la vida real, los conductores necesitan ver de un vistazo dónde pueden estacionarse. La representación textual básica o listados simples no proporcionan la contextualización espacial necesaria para una experiencia de usuario efectiva. Además, para propósitos de demostración y educación, la visualización gráfica hace que el sistema sea más comprensible y atractivo.
 
-#📍 Ruta Simplificada del Vehículo
--Simulación de camino: Al ingresar un vehículo, el sistema puede mostrar una ruta simplificada (marcada con *) desde la entrada hasta el espacio de parqueo asignado, ofreciendo una visualización dinámica.
+**¿Cómo se llevó a cabo su implementación?**
 
-#💰 Cálculo de Tarifas Preciso
--Utiliza el módulo datetime de Python para un registro exacto de la hora de entrada y salida, asegurando un cálculo preciso del tiempo de permanencia.
+- **Sistema de símbolos distintivos:** Se creó un conjunto de caracteres únicos para representar cada elemento del parqueadero:
+  - `P`: Espacio libre disponible
+  - `X`: Espacio ocupado por un vehículo
+  - `E`: Entrada del parqueadero
+  - `S`: Salida del parqueadero
+  - `~`: Vías de circulación
+  
+- **Matriz bidimensional:** Se implementó una estructura de datos de matriz 10×15 que representa físicamente la distribución del parqueadero, permitiendo actualización y consulta eficiente del estado.
 
-#⚙️ Interfaz de Consola Interactiva
--Menú intuitivo: Ofrece un menú de opciones claro para la interacción del usuario (ver mapa, ingresar, sacar, ver disponibilidad).
--Manejo de entradas: Incluye validaciones básicas para las entradas de usuario (ej. placas no vacías).
+- **Función de visualización:** Se desarrolló el método `display_map()` que:
+  - Itera sobre toda la matriz del parqueadero
+  - Renderiza cada símbolo con espaciado apropiado
+  - Se ejecuta automáticamente después de cada operación (ingreso/salida)
+  - Incluye información adicional como conteo de espacios disponibles
 
+### 📍 Ruta Simplificada del Vehículo
 
-#Características Técnicas
+**¿Para qué se implementó?**
 
-#Tecnologías Utilizadas
--Python 3.x: Lenguaje principal de desarrollo.
--Módulo datetime: Para la gestión de fechas y horas.
+Se implementó para simular de manera visual el recorrido que debe realizar un vehículo desde la entrada hasta su espacio de parqueo asignado. Esta funcionalidad proporciona una experiencia más realista y educativa, mostrando el flujo lógico de movimiento dentro del parqueadero.
 
-#Arquitectura del Proyecto
-El proyecto está estructurado en un único archivo parking_lot.py que contiene la clase ParkingLot y la lógica principal del programa:
+**¿Por qué se consideró necesario?**
 
-📁 parking_lot_project/
-├── parking_lot.py      # Contiene la clase ParkingLot y la función main
-└── README.md           # Documentación del proyecto
+En un parqueadero real, los vehículos no aparecen mágicamente en los espacios asignados; deben seguir rutas específicas a través de las vías de circulación. Esta funcionalidad era necesaria para:
+- Hacer el sistema más realista y creíble
+- Proporcionar valor educativo sobre planificación urbana y diseño de parqueaderos
+- Mejorar la comprensión del usuario sobre cómo funciona la asignación de espacios
+- Demostrar que el sistema considera la accesibilidad de los espacios
 
-#Rendimiento
-Diseñado para ser eficiente en el uso de memoria, gestionando el mapa y los vehículos de forma directa.
-Funcionalidad robusta para entornos de consola estándar.
+**¿Cómo se llevó a cabo su implementación?**
 
+- **Algoritmo de marcado de ruta:** Se desarrolló una función que calcula y marca visualmente el camino desde la entrada (E) hasta el espacio asignado:
+  - Identifica las coordenadas de la entrada del parqueadero
+  - Calcula las coordenadas del espacio de destino
+  - Marca temporalmente el camino con asteriscos (`*`)
 
-#Instrucciones de Uso
+- **Sistema de coordenadas:** Se implementó un sistema que:
+  - Utiliza las coordenadas (fila, columna) de la matriz
+  - Calcula la ruta más directa disponible
+  - Respeta las vías existentes cuando es posible
 
-#Requisitos del Sistema
-Cualquier sistema operativo con Python 3.x instalado.
+- **Visualización temporal:** La ruta se muestra durante el proceso de ingreso y luego se limpia, manteniendo el mapa principal libre de elementos temporales que puedan causar confusión.
 
-#Controles
-Interacción basada en entrada numérica a través del menú de la consola.
-Ingreso de la placa del vehículo cuando se solicite.
+### 💰 Cálculo de Tarifas Preciso
 
-#Flujo del sistema
--Inicio: El sistema inicializa el parqueadero con un mapa predefinido y la tarifa por minuto.
--Menú Principal: Se presenta un menú con opciones para interactuar.
--Ingresar Vehículo: Se solicita la placa y el sistema busca un espacio libre, lo asigna, actualiza el mapa y muestra una ruta.
--Sacar Vehículo: Se solicita la placa, se calcula el costo de la estancia y se libera el espacio.
--Visualización: Se puede ver el mapa actual del parqueadero y la disponibilidad en cualquier momento.
+**¿Para qué se implementó?**
 
-#Conclusión
-Este proyecto de sistema de gestión de parqueaderos en Python cumple con todos los requisitos mínimos y añade funcionalidades que mejoran la experiencia de usuario y la comprensión del sistema. Demuestra una sólida base en programación Python, manejo de estructuras de datos y lógica de simulación, siendo un punto de partida excelente para futuras expansiones.
+Se implementó para proporcionar un sistema de cobro exacto y automático basado en el tiempo real de permanencia del vehículo en el parqueadero. Esta funcionalidad calcula automáticamente el monto a pagar considerando la duración exacta de la estancia.
+
+**¿Por qué se consideró necesario?**
+
+La precisión en el cobro es fundamental para cualquier sistema comercial real. Un cálculo inexacto podría resultar en:
+- Pérdidas económicas para el operador del parqueadero
+- Insatisfacción y disputas con los clientes
+- Problemas de credibilidad del sistema
+- Dificultades en la contabilidad y auditoría
+
+Además, para que el sistema sea aplicable en la vida real, debe manejar dinero de manera precisa y confiable.
+
+**¿Cómo se llevó a cabo su implementación?**
+
+- **Módulo datetime de Python:** Se utilizó la librería estándar `datetime` para:
+  - Registrar timestamp exactos al momento del ingreso
+  - Capturar el tiempo exacto de salida
+  - Calcular la diferencia temporal con precisión de segundos
+
+- **Sistema de cálculo:** Se implementó una fórmula que:
+  - Convierte la diferencia de tiempo a minutos (incluyendo fracciones)
+  - Aplica la tarifa configurable por minuto
+  - Redondea apropiadamente para evitar fracciones de centavo
+  - Maneja casos especiales (permanencia menor a 1 minuto)
+
+- **Tarifa configurable:** El sistema permite ajustar fácilmente la tarifa por minuto según las necesidades del negocio, haciendo el sistema adaptable a diferentes contextos económicos.
+
+### ⚙️ Interfaz de Consola Interactiva
+
+**¿Para qué se implementó?**
+
+Se implementó para crear una experiencia de usuario fluida, profesional e intuitiva que permita la interacción efectiva con todas las funcionalidades del sistema sin requerir conocimientos técnicos por parte del usuario.
+
+**¿Por qué se consideró necesario?**
+
+Un sistema sin interfaz amigable es prácticamente inutilizable en contextos reales. Los operadores de parqueaderos, clientes, y administradores necesitan poder usar el sistema sin capacitación técnica extensa. Una interfaz bien diseñada es crucial para:
+- Reducir errores de usuario
+- Aumentar la eficiencia operacional
+- Facilitar la adopción del sistema
+- Proporcionar una experiencia profesional
+- Permitir la demostración efectiva de todas las funcionalidades
+
+**¿Cómo se llevó a cabo su implementación?**
+
+- **Menú numerado intuitivo:** Se diseñó un sistema de menú que:
+  - Presenta opciones claras y descriptivas
+  - Utiliza numeración simple para la selección
+  - Agrupa funcionalidades relacionadas lógicamente
+  - Incluye opción de salida clara
+
+- **Sistema de validación robusto:** Se implementaron validaciones para:
+  - Prevenir entradas vacías o inválidas en las placas
+  - Manejar selecciones de menú fuera de rango
+  - Validar que los vehículos existan antes de intentar sacarlos
+  - Proporcionar mensajes de error claros y útiles
+
+- **Bucle principal inteligente:** Se desarrolló un sistema que:
+  - Mantiene el programa ejecutándose hasta que el usuario decida salir
+  - Regresa automáticamente al menú principal después de cada operación
+  - Maneja excepciones y errores sin causar crashes del sistema
+
+- **Mensajes informativos:** Se incluyeron mensajes que:
+  - Confirman acciones exitosas
+  - Explican errores de manera comprensible
+  - Guían al usuario a través de procesos complejos
+  - Proporcionan información contextual relevante
+
+---
+
+## Arquitectura del Sistema
+
+```python
+class ParkingLot:
+    def __init__(self, rows, cols, rate_per_minute)
+    def display_map(self)
+    def find_available_spot(self)
+    def park_vehicle(self, license_plate)
+    def remove_vehicle(self, license_plate)
+    def calculate_fee(self, entry_time)
+    def show_availability(self)
+```
+
+## Tecnologías Utilizadas
+
+- **Python 3.x:** Lenguaje principal de desarrollo
+- **datetime:** Módulo para gestión precisa de fechas y horas
+- **Estructuras de datos nativas:** Listas, diccionarios y matrices para gestión eficiente de información
+
+## Conclusión
+
+Este sistema de gestión de parqueaderos demuestra una implementación sólida que excede los requisitos básicos a través de desarrollos innovadores que aportan valor real. Cada funcionalidad fue diseñada considerando aplicaciones del mundo real, resultando en un sistema robusto, user-friendly y técnicamente sólido que podría servir como base para implementaciones comerciales.
